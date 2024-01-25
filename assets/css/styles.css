@@ -80,7 +80,7 @@ nav a:hover::after {
     transition-delay: 0.2s;
 }
 
-/* About Section */
+
 #about {
     position: relative;
     overflow: hidden;
@@ -103,13 +103,13 @@ nav a:hover::after {
     position: relative;
     z-index: 1;
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center;
 }
 
 .about-text {
-    flex: 1; /* Take up remaining space */
+    flex: 1;
     text-align: left;
-    padding-right: 20px; /* Adjust as needed for spacing between text and image */
+    padding-right: 20px;
 }
 
 .about-image {
@@ -123,9 +123,9 @@ nav a:hover::after {
 }
 
 #about:hover .about-image {
-    background-image: url('/assets/pics/aboutmepic.jpg'); /* Change this to the path of your new image */
+    background-image: url('/assets/pics/aboutmepic.jpg');
     transform: translateY(10px);
-    transition-delay: 0s; /* Adjust this if needed */
+    transition-delay: 0s;
 }
 
 #about h2,
@@ -138,7 +138,7 @@ nav a:hover::after {
 
 
 
-/* Skills Section */
+
 #skills {
     padding: 100px 400px;
     color: #fff;
@@ -172,14 +172,14 @@ nav a:hover::after {
     background-color: #ddd;
     margin: 0 10px;
     position: relative;
-    border-radius: 10px; /* You can adjust this value to control the roundness */
+    border-radius: 10px;
 }
 
 .skill-progress {
     height: 100%;
     background-color: #6c3483;
     position: absolute;
-    border-radius: 10px; /* Same value for consistency */
+    border-radius: 10px;
 }
 
 .percentage-label {
@@ -202,7 +202,7 @@ h4 {
 
 
 
-/* Resume Section */
+
 #resume {
     position: relative;
     overflow: hidden;
@@ -243,7 +243,7 @@ button:hover {
 }
 
 
-/* Blog Section */
+
 #blog {
     position: relative;
     overflow: hidden;
