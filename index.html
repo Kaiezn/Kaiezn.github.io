@@ -2,149 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <script src="/assets/js/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <title>Ken Zamodio</title>
+    <title>Hangaroo</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-
+<body> 
     <header>
-        <div>
-            <a href="#">
-                <img src="/assets/pics/logo.svg" alt="Logo">
-                <p>Ken</p>
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <!-- Add your social icons here -->
-            <a href="https://www.facebook.com/kenaixrochz" class="icon-container" target="_blank"><img src="/assets/pics/icons8-facebook.svg" alt="Facebook"></a>
-            <a href="https://www.instagram.com/sheu_mai/" class="icon-container" target="_blank"><img src="/assets/pics/icons8-instagram.svg" alt="Instagram"></a>
-
-        </div>
+        <h1 class="game-title">Stage 1</h1>
     </header>
-
-    <section id="about">
-        <div id="about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>
-                    Hello there! 👋 I'm Ken, a passionate individual with a love for coding, gaming, and the joyful moments spent with my dog, Tensai. Whether it's crafting innovative code, conquering gaming quests, or enjoying the company of my four-legged friend, I'm always up for exciting adventures in the digital and real world.
-                </p>
+    <section class="main-content">
+        <div class="letters-container">
+            <div class="keyboard-row">
+                <button class="letter-btn" id="letter1" value="q">q</button>
+                <button class="letter-btn" id="letter2" value="w">w</button>
+                <button class="letter-btn" id="letter3" value="e">e</button>
+                <button class="letter-btn" id="letter4" value="r">r</button>
+                <button class="letter-btn" id="letter5" value="t">t</button>
+                <button class="letter-btn" id="letter6" value="y">y</button>
+                <button class="letter-btn" id="letter7" value="u">u</button>
+                <button class="letter-btn" id="letter8" value="i">i</button>
+                <button class="letter-btn" id="letter9" value="o">o</button>
+                <button class="letter-btn" id="letter10" value="p">p</button>
             </div>
-            <div class="about-image"></div>
-        </div>
-    </section>
-    
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skill-item">
-            <div class="skill-bar-container">
-                <span class="skill-label">HTML:</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 60%;"></div>
-                    <div class="percentage-label">60%</div>
-                </div>
+            <div class="keyboard-row">
+                <button class="letter-btn" id="letter11" value="a">a</button>
+                <button class="letter-btn" id="letter12" value="s">s</button>
+                <button class="letter-btn" id="letter13" value="d">d</button>
+                <button class="letter-btn" id="letter14" value="f">f</button>
+                <button class="letter-btn" id="letter15" value="g">g</button>
+                <button class="letter-btn" id="letter16" value="h">h</button>
+                <button class="letter-btn" id="letter17" value="j">j</button>
+                <button class="letter-btn" id="letter18" value="k">k</button>
+                <button class="letter-btn" id="letter19" value="l">l</button>
             </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-bar-container">
-                <span class="skill-label">CSS:</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 65%;"></div>
-                    <div class="percentage-label">65%</div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-bar-container">
-                <span class="skill-label">JavaScript:</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 30%;"></div>
-                    <div class="percentage-label">30%</div>
-                </div>
-            </div>
-        </div>
-        <div class="skill-item">
-            <div class="skill-bar-container">
-                <span class="skill-label">Python:</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 25%;"></div>
-                    <div class="percentage-label">25%</div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="skill-item">
-            <div class="skill-bar-container">
-                <span class="skill-label">Java:</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 20%;"></div>
-                    <div class="percentage-label">20%</div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="skill-item">
-            <div class="skill-bar-container">
-                <span class="skill-label">MySQL:</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" style="width: 35%;"></div>
-                    <div class="percentage-label">35%</div>
-                </div>
+            <div class="keyboard-row">
+                <button class="letter-btn" id="letter20" value="z">z</button>
+                <button class="letter-btn" id="letter21" value="x">x</button>
+                <button class="letter-btn" id="letter22" value="c">c</button>
+                <button class="letter-btn" id="letter23" value="v">v</button>
+                <button class="letter-btn" id="letter24" value="b">b</button>
+                <button class="letter-btn" id="letter25" value="n">n</button>
+                <button class="letter-btn" id="letter26" value="m">m</button>
             </div>
         </div>
     </section>
     
-    <section id="resume">
-        <h2>Resume</h2>
-        <div id="resume-content">
-            <p>Download my resume:</p>
-            <a href="/assets/pics/resume.pdf" download="resume.pdf">
-                <button>Download Resume</button>
-            </a>
+
+    <section class="answers-field">
+        <div class="categories-container">
+            <h2 class="category" id="category"></h2>
+        </div>
+        <div class="answers-container" id="answers-container">
         </div>
     </section>
 
-    <footer id="contact" style="background-color: #1a1a1a; color: #fff; padding: 50px 400px;">
-        <div class="social-icons">
-            <!-- Facebook Icon -->
-            <div class="icon-container">
-                <a href="https://www.facebook.com/kenaixrochz" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/pics/icons8-facebook.svg" alt="Fb">
-                </a>
-            </div>
-            <!-- Instagram Icon -->
-            <div class="icon-container">
-                <a href="https://www.instagram.com/sheu_mai" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/pics/icons8-instagram.svg" alt="Insta">
-                </a>
-            </div>
+
+    <section class="status" id="status">
+        <div class="life" id="life">
+            <div class="error"></div>
+            <div class="error"></div>
+            <div class="error"></div>
+        </div>
+        <div class="progress" id="progress">
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+            <div class="prog"></div>
+        </div>
+    </section>
+
+
+
+    <section class="game-section">
+        <div class="score" id="score">
+            <span>Points: 0</span>
         </div>
         <div>
-            <h2>Contact Information</h2>
-            <p>Email: kenaixrochz@gmail.com</p>
-            <p>Phone: +63 0952 285 2059</p>
+            <input type="radio" id="vowel" name="clueType" value="vowel" checked>
+            <label for="vowel">Vowel</label>
+    
+            <input type="radio" id="consonant" name="clueType" value="consonant">
+            <label for="consonant">Consonant</label>
         </div>
-    </footer>
-    
-    
-
+        <button id="clue-button">Get Clue</button>
+    </section>
     
 
-    </footer>
-    
 
+    <script src="./js/main.js"></script>
 </body>
 </html>
