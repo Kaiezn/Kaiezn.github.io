@@ -315,10 +315,10 @@ const start = () =>{
             } else {
                 switch (difficulty) {
                     case 'easy':
-                        difficulty = 'Medium';
+                        difficulty = 'medium';
                         break;
                     case 'medium':
-                        difficulty = 'Hard';
+                        difficulty = 'hard';
                         break;
                     case 'hard':
                         header.innerText = "Completed";
@@ -331,6 +331,7 @@ const start = () =>{
                     default:
                         throw new Error('Invalid difficulty level');
                 }
+                
 
                 round = 1;
                 correct = 0;
