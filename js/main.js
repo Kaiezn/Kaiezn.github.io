@@ -351,7 +351,7 @@ const start = () =>{
 
     
     const getClue = () => {
-        const totalPoints = p1.score; // Assuming p1 is defined elsewhere
+        const totalPoints = p1.score;
     
         if (totalPoints >= 25) {
             p1.updateScore(-25);
