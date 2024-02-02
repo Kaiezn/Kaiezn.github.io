@@ -9,17 +9,13 @@
 :root{
     /* COLORS */
     --primaryColor: #3498db; 
-    /* ------- Texts ------*/
     --headerColor: #3498db;
     --primaryText: #2c3e50;
     --answerText: #724100;
-    /* ------- Backgrounds ------- */
     --letterContainer: #1e9dbd; 
-    --letters: #9b59b6; /* Violet */
     --answersContainer: #1e9dbd;
     --categories: #9b59b6;
     --answer: #9b59b6; 
-    /* ------- Borders -------- */
     --answerBorder: #ffffff; 
 }
 
