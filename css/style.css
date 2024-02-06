@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 *{
     padding: 0;
@@ -8,21 +8,29 @@
 
 :root{
     /* COLORS */
-    --primaryColor: #3498db; 
-    --headerColor: #3498db;
-    --primaryText: #2c3e50;
-    --answerText: #724100;
-    --letterContainer: #1e9dbd; 
-    --answersContainer: #1e9dbd;
-    --categories: #9b59b6;
-    --answer: #9b59b6; 
-    --answerBorder: #ffffff; 
+    --primaryColor: #000000; 
+    /* ------- Texts ------*/
+    --headerColor: #f2eeee;
+    --primaryText: #34495e;
+    --answerText: #ecf0f1;
+    /* ------- Backgrounds ------- */
+    --letterContainer: #f4d03f; 
+    --letters: #e74c3c; 
+    --answersContainer: #f4d03f;
+    --categories: #e74c3c;
+    --answer: #e74c3c; 
+    /* ------- Borders -------- */
+    --answerBorder: #000000; 
 }
 
-body{
-    font-family: "Poppins", sans-serif;
+body {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    background-color: #34495e;
+    background-image: url("kangaroo_hop_animation_by_spiritstp_d59uxph.gif");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;  /* Remove default margin to ensure full coverage */
     position: relative;
 }
 
@@ -38,9 +46,27 @@ header h1{
     color: var(--headerColor);
 }
 
-footer p{
-    color: #ffffff; 
-    margin-left: 10px;
+header h5{
+    color: var(--headerColor);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image:url("kangaroo_hop_animation_by_spiritstp_d59uxph.gif");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.start-message {
+    text-align: center; /* center the text inside the overlay */
+    color: white; /* text color */
 }
 
 .main-content{
@@ -79,7 +105,7 @@ footer p{
 }
 
 .letter-btn:hover{
-    background-color: #8e44ad;
+    background-color: #D04848; 
 }
 
 .letter-btn:active{
@@ -141,31 +167,45 @@ footer p{
 
 /* STATUS */
 
-.status{
+.status {
     width: 100vw;
     position: absolute;
     top: 2rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding: 0 3rem;
 }
 
-.life{
+.column {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    width: 15%;
+}
+
+.stage,
+.lives {
+    font-size: 1.2rem;
+    color: var(--headerColor);
     margin-bottom: 1rem;
 }
 
-.error{
+.life {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .5rem 1rem;
+    left: 10rem;
+}
+
+
+.error {
     font-weight: 600;
     font-size: 1.5rem;
     width: 2rem;
     height: 2rem;
     padding: .3rem;
-    border: 2px solid #c91919;
+    border: 2px solid #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,24 +215,23 @@ footer p{
     transition: all ease .1s;
 }
 
-.progress{
+.progress {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    width: 15%;
-    border: 2px solid #29cd37;
+    border: 2px solid #e8e0e0;
     border-radius: 8px;
     padding: .5rem 1rem;
 }
 
-.prog{
+.prog {
     width: 20px;
     height: 20px;
-    border: 3px solid #ffffff;
+    border: 3px solid #e8e5e5;
     border-radius: 50%;
-
     transition: all ease .3s;
 }
+
 
 .game-section {
     display: flex;
@@ -204,7 +243,7 @@ footer p{
 .game-section .score {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: var(--answerBorder);
+    color: var(--headerColor);
 }
 
 .game-section input[type="radio"] {
@@ -224,7 +263,7 @@ footer p{
 }
 
 .game-section input[type="radio"]:checked + label {
-    background-color: var(--letters); 
+    background-color: var(--letterContainer); 
 }
 
 .game-section button {
@@ -240,5 +279,44 @@ footer p{
 }
 
 .game-section button:hover {
+    background-color: #e74c3c; /* Hover color */
+}
+
+.reset-section {
+    text-align: center; /* Center the button within the section */
+    margin-top: 10px;
+    top: 0;
+    right: 0;
+}
+
+#reset-button {
+    width: 105px; 
+    height: 40px; 
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--answersContainer); 
+    color: var(--answerText); 
+    border: 2px solid var(--answerBorder); 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#reset-button:hover {
     background-color: #e74c3c;
+}
+
+footer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer p {
+    /* Additional styling for the <p> element inside the footer if needed */
+    text-align: center;
 }

@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangaroo</title>
+    <title>Kangaroo</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body> 
     <header>
-        <h1 class="game-title">Stage 1</h1>
+        <h1 class="game-title">easy (1)</h1>
     </header>
+
+    <div id="overlay">
+        <h1 class="start-message">Welcome! Tap anywhere to start:</h1>
+    </div>
+
+
+
     <section class="main-content">
         <div class="letters-container">
             <div class="keyboard-row">
@@ -48,7 +55,6 @@
         </div>
     </section>
     
-
     <section class="answers-field">
         <div class="categories-container">
             <h2 class="category" id="category"></h2>
@@ -57,44 +63,61 @@
         </div>
     </section>
 
-
     <section class="status" id="status">
-        <div class="life" id="life">
-            <div class="error"></div>
-            <div class="error"></div>
-            <div class="error"></div>
+        <div class="column">
+            <div class="lives"><b>Lives:</b></div>
+            <div class="life" id="life">
+                <div class="error"></div>
+                <div class="error"></div>
+                <div class="error"></div>
+            </div>
         </div>
-        <div class="progress" id="progress">
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
-            <div class="prog"></div>
+        <div class="column">
+            <div class="stage"><b>Stages:</b></div>
+            <div class="progress" id="progress">
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+                <div class="prog"></div>
+            </div>
         </div>
     </section>
+    
+    
 
 
 
     <section class="game-section">
         <div class="score" id="score">
-            <span>Points: 0</span>
+            <span><b>Points: 0</b></span>
+        </div>
+        <div>
+            <input type="radio" id="vowel" name="clueType" value="vowel" checked>
+            <label for="vowel">Vowel</label>
+    
+            <input type="radio" id="consonant" name="clueType" value="consonant">
+            <label for="consonant">Consonant</label>
         </div>
         <button id="clue-button">Get Clue</button>
+        <section class="reset-section">
+            <button id="reset-button">
+                <img src="/pics/icons8-refresh.svg" alt="Reset Game">
+            </button>
+        </section>
     </section>
     
-    <footer>
-        <p>Zamodio</p>
-        <p>Dela Cruz</p>
-        <p>Cariño</p>
-        <p>Reyes</p>
-        <p>Milante</p>
-    </footer>
+
 
     <script src="./js/main.js"></script>
 </body>
+<footer>
+    <p>WEBPROG IT225</p>
+    <p>Zamodio, Cariño, Dela Cruz, Reyes, Milante</p>
+</footer>
 </html>

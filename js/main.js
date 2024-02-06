@@ -14,7 +14,19 @@ const start = () =>{
     let spaces = 0;
     let round = 1;
     let totalPoints = 0;
+    let cluesUsed = 0;
 
+
+    const startGame = () => {
+        overlay.style.display = 'none'; 
+    };
+    overlay.addEventListener('click', startGame);
+
+    document.getElementById("reset-button").addEventListener("click", function() {
+        location.reload();
+    });
+
+    
     const Questions = {
         easy: [
             {
@@ -288,29 +300,29 @@ const start = () =>{
         if (corr === arr.length - spaces) {
             correct = 0;
             spaces = 0;
-            round++; 
+            round++;
             p1.updateScore(10);
-
+    
             totalPoints = p1.score;
             const scoreElement = document.getElementById("score");
-            scoreElement.innerHTML = `<span>Points: ${totalPoints}</span>`;
+            scoreElement.innerHTML = `<span><strong>Points: ${totalPoints}</strong></span>`; 
             console.log(correct);
             letters.forEach(function (let) {
                 let.disabled = false;
                 let.style.opacity = "100%";
             });
-
+    
             const ansChilds = Array.from(answers.children);
             setTimeout(() => {
                 ansChilds.forEach(function (ansChild) {
                     ansChild.remove();
                 });
             }, 1000);
-
+    
             if (questionList.length !== 0) {
                 setTimeout(() => {
                     questItem = randomizeQuestion();
-                    header.innerText = "("+[difficulty]+")" + ` Round ${round}`;
+                    header.innerText =  [difficulty] +" ("+`${round}`+")";
                 }, 1000);
             } else {
                 switch (difficulty) {
@@ -331,39 +343,41 @@ const start = () =>{
                     default:
                         throw new Error('Invalid difficulty level');
                 }
-                
-
+    
                 round = 1;
                 correct = 0;
                 spaces = 0;
-
+    
                 questionList = Questions[difficulty];
                 questItem = randomizeQuestion();
-                header.innerText = "("+[difficulty]+")" + ` Round ${round}`;
-            }
+                header.innerText = [difficulty] +" ("+`${round}`+")";
 
+
+                for (let i = 0; i < prog.children.length; i++) {
+                    prog.children[i].style.backgroundColor = "";
+                    prog.children[i].style.border = "3px solid #0d75ca";
+                }
+            }
+    
             prog.children[round - 2].style.backgroundColor = "#ffffff";
             prog.children[round - 2].style.border = "none";
             console.log("round :" + (round - 2));
             console.log("len: " + questionList.length);
         }
     };
-
     
+    
+
     const getClue = () => {
         const totalPoints = p1.score;
-    
-        if (totalPoints >= 25) {
-            p1.updateScore(-25);
-    
+        
+        if (totalPoints >= 25  && cluesUsed < 3) { 
             const unrevealedIndices = [];
             const vowels = ['a', 'e', 'i', 'o', 'u'];
             const consonants = 'bcdfghjklmnpqrstvwxyz';
     
             for (let i = 0; i < questItem.length; i++) {
-                
-                    unrevealedIndices.push(i);
-                
+                unrevealedIndices.push(i);
             }
     
             if (unrevealedIndices.length > 0) {
@@ -372,22 +386,46 @@ const start = () =>{
                 const selectedClueType = document.querySelector('input[name="clueType"]:checked').value;
     
                 if (selectedClueType === 'vowel') {
-                    // Reveal a vowel
-                    letterToReveal = vowels[Math.floor(Math.random() * vowels.length)];
+                    // Reveal a random vowel
+                    const vowelIndices = unrevealedIndices.filter(index => vowels.includes(questItem[index]));
+                    if (vowelIndices.length > 0) {
+                        const randomVowelIndex = vowelIndices[Math.floor(Math.random() * vowelIndices.length)];
+                        letterToReveal = questItem[randomVowelIndex];
+                    }
                 } else {
-                    // Reveal a consonant
-                    letterToReveal = consonants[Math.floor(Math.random() * consonants.length)];
+                    // Reveal a random consonant
+                    const consonantIndices = unrevealedIndices.filter(index => !vowels.includes(questItem[index]));
+                    if (consonantIndices.length > 0) {
+                        const randomConsonantIndex = consonantIndices[Math.floor(Math.random() * consonantIndices.length)];
+                        letterToReveal = questItem[randomConsonantIndex];
+                    }
                 }
     
+                if (letterToReveal) {
+                    const letterButton = document.querySelector(`button[value="${letterToReveal}"]`);
+                    if (letterButton) {
+                        letterButton.click();
+                    }
+                } else {
+                    alert('No unrevealed letters of the selected type.');
+                }
     
-                alert(`Clue: ${questItem}`);
+                p1.updateScore(-25);
+                cluesUsed++;
+                const updatedTotalPoints = p1.score;
+                const scoreElement = document.getElementById("score");
+                scoreElement.innerHTML = `<span>Points: ${updatedTotalPoints}</span>`;
+    
             } else {
-                console.log("All letters are already revealed!");
+                alert('No unrevealed letters to use a clue.');
             }
+        } else if (cluesUsed >= 3) {
+            alert('You have already used the maximum number of clues.');
         } else {
             alert("Not enough points for a clue!");
         }
     };
+    
     
     
     
